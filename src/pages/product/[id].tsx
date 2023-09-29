@@ -9,6 +9,7 @@ import axios from "axios";
 import { useState } from "react";
 
 
+
 interface ProductProps {
   product: {
     id: string
@@ -32,7 +33,7 @@ export default function Product({ product }: ProductProps) {
 
       setIsCreatingCheckoutSesseion(true)
 
-      const response = await axios.post('/api/checkout', {
+      const response = await axios.post('../api/checkout', {
         priceId: product.defaultPriceId,
       })
 
@@ -42,7 +43,7 @@ export default function Product({ product }: ProductProps) {
 
     } catch (err) {
 
-      //Conectar com uma ferramenta de observabiliodade 
+      //Conectar com uma ferramenta de observabilidade 
       alert('Falha ao rastrear o produto')
 
 
